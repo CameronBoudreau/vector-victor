@@ -1,6 +1,7 @@
 class ShapeError(Exception):
     pass
 
+
 def shape(list_or_maxtrix):
     return (len(list_or_maxtrix),)
 
@@ -21,8 +22,20 @@ def vector_sum(*args):
         raise ShapeError
     return [sum(a) for a in zip(*args)]
 
+def dot(vec_one, vec_two):
+    if len(vec_one) !=  len(vec_two):
+        raise ShapeError
+    return sum([(a * b) for a, b in zip(vec_one, vec_two)])
+
+def vector_multiply(vec_one, scalar):
+    return [(i*scalar) for i in vec_one]
+
+def vector_mean(*args):
+    return [(sum(a)/len(a)) for a in zip(*args)]
 
 
+def magnitude(vec_one):
+    return sum(a**2 for a in vec_one)**.5
 
 
 m = [3, 4]
