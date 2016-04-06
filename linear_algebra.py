@@ -16,7 +16,7 @@ def vector_sub(vec_one, vec_two):
     return [(a - b) for a, b in zip(vec_one, vec_two)]
 
 def vector_sum(*args):
-    lengths = [len(i) for i in]
+    lengths = [len(i) for i in args]
     if max(lengths) != min(lengths):
         raise ShapeError
     return [sum(a) for a in zip(*args)]
